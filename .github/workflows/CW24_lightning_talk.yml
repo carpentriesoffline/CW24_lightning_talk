@@ -21,4 +21,4 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            OfflineDataSci_lightning_talk.pdf
+            cw24.pdf
