@@ -1,5 +1,5 @@
 name: Build slide for CW24 lightning talk
-on: [push, pull request]
+on: [push, pull_request]
 jobs:
   build_latex:
     runs-on: ubuntu-latest
