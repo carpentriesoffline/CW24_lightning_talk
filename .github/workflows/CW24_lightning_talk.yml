@@ -15,7 +15,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: cw24
-          path: OfflineDataSci_lightning_talk.pdf
+          path: cw24.pdf
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
