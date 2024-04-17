@@ -16,6 +16,13 @@ jobs:
         with:
           name: pdf
           path: cw24.pdf
+      - name: Get timestamp
+        id: timestamp
+        run: echo "::set-output name=timestamp::$(date +'%Y%m%d%H%M%S')"
+      - name: Create tag
+        run: git tag -a v${{ steps.timestamp.outputs.timestamp }} -m "Version v${{ steps.timestamp.outputs.timestamp }}"
+      - name: Push tag
+        run: git push origin --tags
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
