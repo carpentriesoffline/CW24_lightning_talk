@@ -1,5 +1,8 @@
 name: Build slide for CW24 lightning talk
-on: [push, pull_request]
+on:
+  push:
+    tags:
+      - '*'
 jobs:
   build_latex:
     runs-on: ubuntu-latest
@@ -28,6 +31,7 @@ jobs:
       - name: Push tag
         run: git push origin --tags
       - name: Release
+        if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
           files: cw24.pdf
