@@ -10,6 +10,7 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: cw24.tex
+          latexmk_use_lualatex: true
       - name: Upload slide PDF file
         uses: actions/upload-artifact@v4
         with:
